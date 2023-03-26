@@ -9,6 +9,7 @@ import (
 )
 
 func main() {
+	// get html embedded string as input argument
 	name := os.Args[1]
 	fmt.Println(os.Args[0])
 	fmt.Println(os.Args[1])

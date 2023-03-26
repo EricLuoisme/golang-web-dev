@@ -7,6 +7,7 @@ import (
 )
 
 func main() {
+	// parseGlob would parse all files inside the folder under specific path
 	tpl, err := template.ParseGlob("templates/*")
 	if err != nil {
 		log.Fatalln(err)
