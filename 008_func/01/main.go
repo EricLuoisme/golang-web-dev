@@ -31,6 +31,8 @@ var fm = template.FuncMap{
 }
 
 func init() {
+	// chaining, similar to lambda expression
+	// here just parse own funcMap fm first, which help for parsing the template first
 	tpl = template.Must(template.New("").Funcs(fm).ParseFiles("tpl.gohtml"))
 }
 

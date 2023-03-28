@@ -13,7 +13,8 @@ func init() {
 }
 
 func main() {
-	err := tpl.ExecuteTemplate(os.Stdout, "tpl.gohtml", 42)
+	// here pass the data into the {{.}} into html file
+	err := tpl.ExecuteTemplate(os.Stdout, "tpl.gohtml", "data")
 	if err != nil {
 		log.Fatalln(err)
 	}
