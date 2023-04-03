@@ -26,6 +26,8 @@ func main() {
 }
 
 func handle(conn net.Conn) {
+
+	// set deadline that could end the tcp connection
 	err := conn.SetDeadline(time.Now().Add(10 * time.Second))
 	if err != nil {
 		log.Fatalln("CONN TIMEOUT")

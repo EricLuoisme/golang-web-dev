@@ -8,10 +8,12 @@ import (
 )
 
 func main() {
+	// using the net pkg to bind a port
 	li, err := net.Listen("tcp", ":8080")
 	if err != nil {
 		log.Fatalln(err)
 	}
+	// defer close the listener
 	defer li.Close()
 
 	for {
