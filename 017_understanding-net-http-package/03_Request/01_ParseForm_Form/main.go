@@ -6,14 +6,14 @@ import (
 	"net/http"
 )
 
-type hotdog int
+type customHttpHandler int
 
-func (m hotdog) ServeHTTP(w http.ResponseWriter, req *http.Request) {
+func (m customHttpHandler) ServeHTTP(w http.ResponseWriter, req *http.Request) {
 	err := req.ParseForm()
 	if err != nil {
 		log.Fatalln(err)
 	}
-
+	// here calling the temple -> which basically return an html return to the reqeust
 	tpl.ExecuteTemplate(w, "index.gohtml", req.Form)
 }
 
@@ -24,6 +24,6 @@ func init() {
 }
 
 func main() {
-	var d hotdog
+	var d customHttpHandler
 	http.ListenAndServe(":8080", d)
 }
