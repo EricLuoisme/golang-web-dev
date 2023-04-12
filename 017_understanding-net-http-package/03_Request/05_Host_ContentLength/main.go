@@ -10,6 +10,7 @@ import (
 type hotdog int
 
 func (m hotdog) ServeHTTP(w http.ResponseWriter, req *http.Request) {
+	// req.ParseForm could help us parse the http request into readable form
 	err := req.ParseForm()
 	if err != nil {
 		log.Fatalln(err)
