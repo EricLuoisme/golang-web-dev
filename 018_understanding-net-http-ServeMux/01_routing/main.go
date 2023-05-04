@@ -7,6 +7,7 @@ import (
 
 type hotdog int
 
+// ServeHTTP handle the routing inside the function (as a common handler)
 func (m hotdog) ServeHTTP(w http.ResponseWriter, req *http.Request) {
 	switch req.URL.Path {
 	case "/dog":

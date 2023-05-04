@@ -24,5 +24,6 @@ func main() {
 	http.Handle("/dog", d)
 	http.Handle("/cat", c)
 
+	// Default ServeMux is using -> by passing nil
 	http.ListenAndServe(":8080", nil)
 }

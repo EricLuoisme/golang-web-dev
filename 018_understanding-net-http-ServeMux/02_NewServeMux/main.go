@@ -21,6 +21,7 @@ func main() {
 	var d hotdog
 	var c hotcat
 
+	// user serveMux -> as a routing (rather than handle it by your own handler)
 	mux := http.NewServeMux()
 	mux.Handle("/dog/", d)
 	mux.Handle("/cat", c)
